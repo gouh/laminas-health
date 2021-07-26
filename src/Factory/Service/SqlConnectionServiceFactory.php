@@ -25,6 +25,11 @@ class SqlConnectionServiceFactory
             return new SqlConnectionService($adapter);
         }
 
+        if ($container->has('doctrine.entity_manager.orm_default')) {
+            $adapter = $container->get('doctrine.entity_manager.orm_default');
+            return new SqlConnectionService($adapter);
+        }
+
         throw new Exception(
             'You do not have a previous configuration to be able to create an instance of SqlConnectionService'
         );
