@@ -22,10 +22,24 @@ class ConfigProvider
     public function __invoke(): array
     {
         return [
-            EndpointConnectionService::class => EndpointConnectionServiceFactory::class,
-            MongoConnectionService::class => MongoConnectionServiceFactory::class,
-            RedisConnectionService::class => RedisConnectionServiceFactory::class,
-            SqlConnectionService::class => SqlConnectionServiceFactory::class,
+            'dependencies' => $this->getDependencyConfig(),
+        ];
+    }
+
+    /**
+     * Return default service mappings for laminas-health.
+     *
+     * @return array
+     */
+    public function getDependencyConfig(): array
+    {
+        return [
+            'factories' => [
+                EndpointConnectionService::class => EndpointConnectionServiceFactory::class,
+                MongoConnectionService::class => MongoConnectionServiceFactory::class,
+                RedisConnectionService::class => RedisConnectionServiceFactory::class,
+                SqlConnectionService::class => SqlConnectionServiceFactory::class,
+            ]
         ];
     }
 }
