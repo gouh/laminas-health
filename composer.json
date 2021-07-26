@@ -1,0 +1,30 @@
+{
+    "name": "hangouh/laminas-health",
+    "description": "Health handler for laminas",
+    "type": "library",
+    "require": {
+        "php": ">=7.2"
+    },
+    "require-dev": {
+        "psr/container": "^1.0",
+        "laminas/laminas-http": "^2.7",
+        "laminas/laminas-db": "^2.11.4",
+        "laminas/laminas-cache": "^2.10.3",
+        "doctrine/mongodb-odm": "^2.2",
+        "doctrine/orm": "^2.9"
+    },
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "Hugo Hernandez Valdez",
+            "email": "hugohv10@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hangouh\\LaminasHealth\\":"src/"
+        }
+    }
+}
